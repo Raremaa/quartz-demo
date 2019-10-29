@@ -32,4 +32,13 @@ public class TriggerDefine {
                     .withRepeatCount(100))//最多重复100次（实际执行100+1次）
             .build();
 
+    /**
+     * CronTrigger
+     */
+    Trigger cronTrigger = TriggerBuilder.newTrigger()
+            .withIdentity("trigger1", "group1")
+            .startNow()
+            .withSchedule(CronScheduleBuilder.cronSchedule("0/1 * * * * ?"))
+            .build();
+
 }
